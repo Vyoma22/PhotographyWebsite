@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik&display=swap" rel="stylesheet">
+    <style>
+        /* Add styling for images in the collection */
+        .bookmarked-photo-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 10px; /* Adjust the margin as needed */
+        }
+
+        .bookmarked-photo {
+            width: 600px; 
+            height: auto; /* Maintain the aspect ratio */
+            margin-right: 10px; 
+        }
+
+        /* Center the collection container */
+        #bookmarked-photos {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap; 
+            max-width: 900px; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <ul>
+            <li><a class = "active" href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Albums</a>
+                <div class="dropdown-content">
+                    <a href="#people">People</a>
+                    <a href="#food">Food</a>
+                    <a href="#festivals">Festivals</a>
+                    <a href="#seasons">Seasons</a>
+                </div>
+            </li>
+            <li><a href="#likedphotos">Collection</a></li>
+            <li><a href="#upload">Upload</a></li>
+            <li><a href="#about">About</a></li>
+            <button id="dark-mode-toggle">Dark Mode</button>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <div class="tabs">
+            <section id="home">
+                <h1>KaleidoFocus</h1>
+                <div class="slides-container">
+                    <div class="slides">
+                        <img src="pictures/people/people-children.jpg" id="clipped">
+                    </div>
+                    <div class="slides">
+                        <img src="pictures/Food/macaroons.jpg" id="clipped">
+                    </div>
+                    <div class="slides">
+                        <img src="pictures/summer/summer-icecream.jpg" id="clipped">
+                    </div>
+                    <div class="slides">
+                        <img src="pictures/Halloween/halloween-girl.jpg" id="clipped">
+                    </div>
+                    <div class="slides">
+                        <img src="pictures/winter/winter-landscape.jpg" id="clipped">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </section>
+            <section id="people">
+                <div class="photo-gallery">
+                    <img src="pictures/people/people-3.jpg" alt="caption" class="photo">
+                    <img src="pictures/people/people-baby.jpg" alt="caption" class="photo">
+                    <img src="pictures/people/people-backpackers.jpg" alt="caption" class="photo">                    
+                    <img src="pictures/people/people-children.jpg" alt="caption" class="photo">
+                    <img src="pictures/people/people-love.jpg" alt="caption" class="photo">
+                    <img src="pictures/people/people-male-runner.jpg" alt="caption" class="photo">
+                    <img src="pictures/people/people-salt-harvest.jpg" alt="caption" class="photo">
+                </div>
+            </section>
+            <section id="food">
+                <div class="photo-gallery">
+                    <img src="pictures/Food/blueberries.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/cake.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/cake2.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/cookies.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/macaroons.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/pizza.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/kfood.jpg" alt="caption" class="photo">
+                    <img src="pictures/Food/noodles.jpg" alt="caption" class="photo">
+                </div>
+            </section>
+            <section id="festivals"> 
+                <div class="festivals-buttons">
+                    <button onclick="showFestival('christmas')" data-festival="christmas">Christmas</button>
+                    <button onclick="showFestival('halloween')" data-festival="halloween">Halloween</button>
+                    <button onclick="showFestival('diwali')" data-festival="diwali">Diwali (Festival of Lights)</button>
+                    <button onclick="showFestival('boishakh')" data-festival="boishakh">Boishakh (Bengali New Year)</button>
+                    <button onclick="showFestival('lunar')" data-festival="lunar">Lunar New Year</button>
+                </div>
+                <div id="christmas" class="festival-section">
+                    <h3>Christmas Photos</h3>
+                    <div class="photo-gallery">
+                        <img src="pictures/Christmas/xmas-anise.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-cake.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-decoration.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-family.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-gift.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-ornaments.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-snowflake.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-star.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-tree.jpg" alt="caption" class="photo">
+                        <img src="pictures/Christmas/xmas-person.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+                <div id="halloween" class="festival-section">
+                    <h3>Halloween Photos</h3>
+                    <div class="photo-gallery">     
+                        <img src="pictures/Halloween/halloween-catrina.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-dog2.png" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-dogs.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-ghosts.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-girl.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-potion.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-pumpkin.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-pumpkin2.jpg" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-truck.png" alt="caption" class="photo">
+                        <img src="pictures/Halloween/halloween-web.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+                <div id="diwali" class="festival-section">
+                    <h3>Diwali Photos (Festival of Lights)</h3>
+                    <div class="photo-gallery">     
+                        <img src="pictures/Diwali/diwali-diya.jpg" alt="caption" class="photo">
+                        <img src="pictures/Diwali/diwali-fire.jpg" alt="caption" class="photo">
+                        <img src="pictures/Diwali/diwali-fireworks.jpg" alt="caption" class="photo">
+                        <img src="pictures/Diwali/diwali-market.jpg" alt="caption" class="photo">
+                        <img src="pictures/Diwali/diwali-ornaments.jpg" alt="caption" class="photo">
+                        <img src="pictures/Diwali/diwali-sweets.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+                <div id="boishakh" class="festival-section">
+                    <h3>Boishakh Photos (Bengali New Year)</h3>
+                    <div class="photo-gallery">     
+                        <img src="pictures/Boishakh/boishakh-dakha.jpg" alt="caption" class="photo">
+                        <img src="pictures/Boishakh/boishakh-food.png" alt="caption" class="photo">
+                        <img src="pictures/Boishakh/boishakh-food2.jpg" alt="caption" class="photo">
+                        <img src="pictures/Boishakh/boishakh-poha.jpg" alt="caption" class="photo">
+                        <img src="pictures/Boishakh/boishakh-sari.jpg" alt="caption" class="photo">
+                        <img src="pictures/Boishakh/boishakh-thali.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+                <div id="lunar" class="festival-section">
+                    <h3>Lunar New Year Photos</h3>
+                    <div class="photo-gallery">     
+                        <img src="pictures/Lunar/lunar-couplet.jpg" alt="caption" class="photo">
+                        <img src="pictures/Lunar/lunar-lanterns.jpg" alt="caption" class="photo">
+                        <img src="pictures/Lunar/lunar-lion.jpg" alt="caption" class="photo">
+                        <img src="pictures/Lunar/lunar-mooncake.jpg" alt="caption" class="photo">
+                        <img src="pictures/Lunar/lunar-person.jpg" alt="caption" class="photo">
+                        <img src="pictures/Lunar/lunar-scrolls.jpg" alt="caption" class="photo">
+                </div>
+                </div>
+            </section>
+            <section id="seasons"> 
+                <div class="season-buttons">
+                    <button onclick="showSeason('summer')" data-season="summer">Summer</button>
+                    <button onclick="showSeason('spring')" data-season="spring">Spring</button>
+                    <button onclick="showSeason('fall')" data-season="fall">Fall</button>
+                    <button onclick="showSeason('winter')" data-season="winter">Winter</button>
+                </div>
+                <div id="summer" class="seasonal-section">
+                    <h3>Summer Photos</h3>
+                    <div class="photo-gallery">
+                        <img src="pictures/summer/summer-bicyle.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-blueberries.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-cafe.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-girl.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-houses.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-icecream.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-lavendar.jpg" alt="caption" class="photo">
+                        <img src="pictures/summer/summer-strawberry.jpg" alt="caption" class="photo">  
+                    </div>
+                </div>
+                <div id="spring" class="seasonal-section">
+                    <h3>Spring Photos</h3>
+                    <div class="photo-gallery">                        
+                        <img src="pictures/spring/spring-bird.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-butterfly.png" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-child.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-dandelion.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-easter.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-flower.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-girl.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-girl2.jpg" alt="caption" class="photo">
+                        <img src="pictures/spring/spring-rose.jpg" alt="caption" class="photo"> 
+                    </div>
+                </div>
+                <div id="fall" class="seasonal-section">
+                    <h3>Fall Photos</h3>
+                    <div class="photo-gallery">
+                        <img src="pictures/fall/fall-cookies.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-flower.png" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-lake.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-leaf.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-leaves.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-pie.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-pumpkin.jpg" alt="caption" class="photo">
+                        <img src="pictures/fall/fall-tea.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+                <div id="winter" class="seasonal-section">
+                    <h3>Winter Photos</h3>
+                    <div class="photo-gallery">                        
+                        <img src="pictures/winter/winter-bubble.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-castle.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-fox.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-landscape.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-man.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-soap-bubble.jpg" alt="caption" class="photo">
+                        <img src="pictures/winter/winter-wolf.jpg" alt="caption" class="photo">
+                    </div>
+                </div>
+            </section>
+            <section id="likedphotos">
+                <h2>Your Collection</h2>
+                <div id="bookmarked-photos" class="photo-gallery"></div>
+            </section>
+            <section id="upload">
+                <h2>Upload Photos</h2>
+                <form id="uploadForm" action="uploading.php" method="POST" enctype="multipart/form-data">
+                    <label for="photos">Select photos to upload:</label>
+                    <input type="file" name="file" id="file" required>
+                    <br>
+                    <label for="category">Select a category:</label>
+                    <select name="category" id="category">
+                        <option value="people">People</option>
+                        <option value="food">Food</option>
+                        <optgroup label ="Festivals">
+                            <option value="christmas">Christmas</option>
+                            <option value="halloween">Halloween</option>
+                            <option value="diwali">Diwali (Festival of Lights)</option>
+                            <option value="boishakh">Boishakh (Bengali New Year)</option>
+                            <option value="lunar">Lunar New Year</option>
+                        </optgroup>
+                        <optgroup label="Seasons">
+                            <option value="summer">Summer</option>
+                            <option value="spring">Spring</option>
+                            <option value="fall">Fall</option>
+                            <option value="winter">Winter</option>
+                        </optgroup>
+                    </select>
+                    <br>
+                    <input type="submit" name= "upload">
+                </form>
+            </section>
+            <button id="back-to-top">Back to Top</button> 
+            <div id="modal-container" class="modal-container">
+                <span class="close-modal" id="close-modal">&times;</span>
+                <img id="modal-content" class="modal-content">
+                <div id="next-arrow" class="modal-arrow">&rsaquo;</div>
+                <div id="prev-arrow" class="modal-arrow">&lsaquo;</div>
+            </div>
+            <section id="about">
+                <h2>Welcome to the about page!</h2>
+                <p>
+                    Thank you for visiting our photography website! We are passionate about capturing
+                    moments and sharing them with you. Our diverse collection includes photos of people,
+                    delicious food, vibrant festivals, and the beauty of different seasons.
+                </p>
+                <p>
+                    Feel free to explore the various sections and add your favorite photos to your
+                    collection. If you have any questions or would like to know more about our photography,
+                    don't hesitate to reach out.
+                </p>
+                <p>
+                    Enjoy your journey through the lens of our photographers!
+                </p>
+            </section>
+            <div id="upload-message" class="upload-message"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

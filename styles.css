@@ -1,0 +1,375 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; 
+    color: #000000; 
+}
+body.dark-mode {
+    background-color: #1e1e1e; 
+    color: #a67b5b;
+}
+
+header {
+    background-color: #635555;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav a.active {
+    border-bottom: 4px solid white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 3px;
+    color: white;
+}
+/* Style the dropdown button and container */
+.dropdown {
+    display: inline-block;
+}
+
+.dropbtn {
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+    text-decoration: none;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a.active{
+    background-color: #ddd;
+}
+main {
+    margin: 5px;
+    display: grid;
+    place-items: center;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+/* Initially hide the Back to Top button */
+#back-to-top {
+    display: none;
+}
+
+/* Show the Back to Top button only when the associated section is the target */
+#home:target #back-to-top,
+#people:target #back-to-top,
+#about:target #back-to-top,
+#food:target #back-to-top {
+    display: block;
+}
+
+/* Add this to your styles.css */
+.slides-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 15vw;
+    background-color: #55555561;
+    width: 100vw;
+    height: 60vh; /* Adjust the percentage as needed */
+    display: flex;
+    align-items: center;
+}
+
+.slides {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    transition: transform 0.8s ease;
+}
+
+.slides img {
+    object-fit: cover;
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+section {
+    display: none;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #3d251e;
+    font-size: 7vw;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body.dark-mode h1{
+    color: #d2b48c;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    display: inline-block;
+}
+body.dark-mode h2{
+    color: #d2b48c;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#bookmarked-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+    justify-content: space-between;
+}
+
+#bookmarked-photos img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.festivals-buttons,
+.season-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #2e242c;
+    color: white;
+    border: none;
+    padding: 6px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius:9px;
+}
+body.dark-mode button{
+    background-color: #d2b48c;
+    color: black;
+}
+button:hover {
+    background-color: #555;
+}
+
+.festival-section,
+.seasonal-section {
+    margin-top: 20px;
+}
+
+/* Add these styles for the modal content */
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+#modal-content {
+    max-height: 80vh;
+    width: auto;
+    margin: auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    box-sizing: border-box;
+}
+
+#add-to-collection {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#add-to-collection:hover {
+    background-color: #45a049;
+}
+
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    margin-top: -15px;
+}
+
+#next-arrow {
+    right: 10px;
+}
+
+#prev-arrow {
+    left: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Add styling for images in the collection */
+.bookmarked-photo {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Add this CSS for the bookmarked photos */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* Add this to your CSS file */
+#upload-message {
+    color: #d2b48c;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
